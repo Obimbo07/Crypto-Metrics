@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchCryptocurrencies } from '../redux/Crypto/CryptoSlice';
+import React from 'react';
 
-const Home = () => {
-    return (
-    <div>
+const Home = () => (
+  <div>
     <h1>Found Home</h1>
-    </div>
-    );
-}
+  </div>
+);
 
 export default Home;

@@ -10,15 +10,11 @@ const initialState = {
 export const fetchCryptocurrencies = createAsyncThunk(
   'crypto/fetchCryptocurrencies',
   async () => {
-    try {
-      const response = await axios.get(
-        'https://financialmodelingprep.com/api/v3/symbol/available-cryptocurrencies?apikey=AxRASTNmr14KNNzub18PPVbKg7zHZLkb'
-      );
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  }
+    const response = await axios.get(
+      'https://financialmodelingprep.com/AxRASTNmr14KNNzub18PPVbKg7zHZLkb/v3/symbol/available-cryptocurrencies',
+    );
+    return response.data;
+  },
 );
 
 const cryptoSlice = createSlice({
@@ -40,6 +36,5 @@ const cryptoSlice = createSlice({
       });
   },
 });
-
 
 export default cryptoSlice.reducer;
