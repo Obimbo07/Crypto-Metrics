@@ -2,17 +2,15 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  cryptocurrencies: [],
+  data: [],
   status: 'idle',
   error: null,
 };
 
-export const fetchCryptocurrencies = createAsyncThunk(
-  'crypto/fetchCryptocurrencies',
-  async () => {
-    const response = await axios.get(
-      'https://financialmodelingprep.com/AxRASTNmr14KNNzub18PPVbKg7zHZLkb/v3/symbol/available-cryptocurrencies',
-    );
+export const fetchCrypto = createAsyncThunk(
+  'crypto/fetchCrypto',
+  async (searchQuery = '') => {
+    const response = await axios.get(`https://api.coinlore.net/api/tickers/?search=${searchQuery}`);
     return response.data;
   },
 );
@@ -23,14 +21,14 @@ const cryptoSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCryptocurrencies.pending, (state) => {
+      .addCase(fetchCrypto.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchCryptocurrencies.fulfilled, (state, action) => {
+      .addCase(fetchCrypto.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.cryptocurrencies = action.payload;
+        state.data = action.payload;
       })
-      .addCase(fetchCryptocurrencies.rejected, (state, action) => {
+      .addCase(fetchCrypto.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
