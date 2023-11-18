@@ -24,16 +24,13 @@ const Home = () => {
       <Search setSearchQuery={setSearchQuery} />
       <div className="status-nav">
         <div className="nav-items">
-          <span className="Page-title">Status</span>
-          <Link to="/alltimeStatus">
-            <span className="link">All time Status</span>
-          </Link>
+          <span className="Page-title">Status by Crypto</span>
         </div>
       </div>
       <div className="card-section">
         {filteredCryptos && filteredCryptos.length > 0 ? (
           filteredCryptos.map((crypto) => (
-            <div style={{ width: '50%' }} key={crypto.id}>
+            <div style={{ width: 'fit-content' }} key={crypto.id}>
               <Card
                 className="p-2"
                 style={{
@@ -43,20 +40,22 @@ const Home = () => {
                   padding: '40px',
                   borderStyle: 'groove',
                   borderRadius: '56px',
+                  borderColor: '#3939d1',
+                  width: '200px',
                 }}
               >
 
                 <Card.Header className="header-card">
-                  <Card.Title>{crypto.name}</Card.Title>
+                  <Card.Title className="card-title">{crypto.name}</Card.Title>
                   <div className="div-cardImg">
                     <Card.Img
                       variant="top"
                       src={crypto.iconUrl}
                       alt="Coin Icon"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                     />
                   </div>
-                  <Link to={`/details/${crypto.id}`}>
+                  <Link to={`/details/${crypto.name}`}>
                     <FaArrowCircleRight className="details-nav" />
                   </Link>
                 </Card.Header>
@@ -81,7 +80,7 @@ const Home = () => {
             </div>
           ))
         ) : (
-          <div>No data available.</div>
+          <div className="loading-text">Loading Data Please Wait...</div>
         )}
       </div>
     </div>
