@@ -131,11 +131,12 @@
 
 .status-screen {
   margin: 10px;
-    background-color: blue;
-    padding: 12px;
-    border-style: inset;
-    border-radius: 26px;
+  background-color: blue;
+  padding: 12px;
+  border-style: inset;
+  border-radius: 26px;
 }
+
 /* Media query for mobile devices */
 @media screen and (max-width: 375px) {
   .search-bar {

@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import cryptoReducer from './Crypto/CryptoSlice';
 import thunk from 'redux-thunk';
+import cryptoReducer from './Crypto/CryptoSlice';
 
 const middleware = [...getDefaultMiddleware(), thunk];
 
