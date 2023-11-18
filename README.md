@@ -30,6 +30,12 @@
 
 **[Crypto Metrics]** "Crypto Metrics" This application allows acccess crypto Data and real time information of all coins.
 
+![Demo images](./public/WhatsApp%20Image%202023-11-18%20at%2018.42.24_e0243ab4.jpg)
+![Demo images](./public/WhatsApp%20Image%202023-11-18%20at%2018.42.51_033b0800.jpg)
+
+
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -56,7 +62,9 @@
 
 ### Live demo <a name="live-demo"></a>
 
-[Not Live yet]()
+[Live Demo](https://crypto-metrics-i45b.onrender.com)
+[Live Presentation](https://www.loom.com/share/3651e030aa0d458aa8e2b0f6d81f395c?sid=ab7976f4-9172-49a5-bdeb-992ae7c8ae18)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -118,6 +126,7 @@ You can deploy this project using:
 - GitHub: [@githubhandle](https://github.com/Obimbo07)
 - Twitter: [@twitterhandle](https://twitter.com/austsine_)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/austin-obimbo-9a613623a/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -134,7 +143,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page] (https://github.com/Obimbo07/metrics-capstone/issues).
+Feel free to check the [issues page](https://github.com/Obimbo07/metrics-capstone/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,7 +159,8 @@ If you like this definely star the project. Grab a virtual coffee session with t
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thank you Microverse for the Project khanban setup.
+Inspiration [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
+Microverse student community
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

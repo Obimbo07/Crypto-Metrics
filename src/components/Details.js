@@ -46,7 +46,7 @@ const Details = () => {
           </div>
           <div className="divider-header">
             <h2>
-              Crypto Details for ID:
+              Crypto Details for:
               {' '}
               {name}
             </h2>
