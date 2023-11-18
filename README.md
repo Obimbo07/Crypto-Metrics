@@ -30,8 +30,8 @@
 
 **[Crypto Metrics]** "Crypto Metrics" This application allows acccess crypto Data and real time information of all coins.
 
-![Demo images](./home.jpg)
-![Demo images](./detail.jpg)
+![Demo images](./public/home.jpg)
+![Demo images](./public/detail.jpg)
 
 
 
