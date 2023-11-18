@@ -1,28 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-
-const Links = [
-  { title: 'Home', path: '/', className: 'noactive-link' },
-  { title: 'Details', path: '/details', className: 'noactive-link' },
-];
+import { Link } from 'react-router-dom';
+import { FaLessThan, FaMicrophone } from 'react-icons/fa';
+import { FiSettings } from 'react-icons/fi';
+import '../App.css';
 
 function NavBar() {
   return (
-    <div>
-      <div className="Logo-cont">
-        <h2>METRICS</h2>
-      </div>
+    <div className="nav-section">
       <div>
-        {Links.map((link) => (
-          <li className="navLink" key={link.title}>
-            <NavLink to={link.path} className={link.className}>
-              {link.title}
-            </NavLink>
-          </li>
-        ))}
+        <Link to="/" className="links">
+          <FaLessThan />
+        </Link>
+      </div>
+      <div className="Logo-cont">
+        <h4>CRYPTO METRICS</h4>
+      </div>
+      <div className="itemsActions">
+        <FaMicrophone className="itm-act" />
+        <FiSettings className="itm-act" />
       </div>
     </div>
-
   );
 }
 
