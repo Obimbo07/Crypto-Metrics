@@ -1,55 +1,40 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  data: [],
+  cryptocurrencies: [],
   status: 'idle',
   error: null,
 };
 
-export const fetchCrypto = createAsyncThunk(
-  'crypto/fetchCrypto',
-  async (searchQuery = '') => {
-    try {
-      const url = `https://api.coinranking.com/v2/coins?search=${searchQuery}`;
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      throw new Error(`Failed to fetch crypto data: ${error.message}`);
-    }
+export const fetchCryptocurrencies = createAsyncThunk(
+  'crypto/fetchCryptocurrencies',
+  async () => {
+    const response = await axios.get(
+      'https://financialmodelingprep.com/AxRASTNmr14KNNzub18PPVbKg7zHZLkb/v3/symbol/available-cryptocurrencies',
+    );
+    return response.data;
   },
 );
 
 const cryptoSlice = createSlice({
   name: 'crypto',
   initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCrypto.pending, (state) => {
+      .addCase(fetchCryptocurrencies.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchCrypto.fulfilled, (state, action) => {
+      .addCase(fetchCryptocurrencies.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.data = action.payload.data;
+        state.cryptocurrencies = action.payload;
       })
-      .addCase(fetchCrypto.rejected, (state, action) => {
+      .addCase(fetchCryptocurrencies.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
   },
 });
 
-export const { setNameReducer } = cryptoSlice.actions;
 export default cryptoSlice.reducer;
