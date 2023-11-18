@@ -77,7 +77,6 @@ const Details = () => {
               {' '}
               {cryptoDetails.change}
             </li>
-            {/* Add more details as needed */}
           </ul>
 
         </>

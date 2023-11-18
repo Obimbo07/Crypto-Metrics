@@ -8,7 +8,6 @@ function NavBar() {
   return (
     <div className="nav-section">
       <div>
-        {/* Use Link instead of NavLink */}
         <Link to="/" className="links">
           <FaLessThan />
         </Link>

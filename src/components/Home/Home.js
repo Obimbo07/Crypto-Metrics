@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -17,6 +16,7 @@ const Home = () => {
     dispatch(fetchCrypto(searchQuery));
   }, [dispatch, searchQuery]);
 
+  // eslint-disable-next-line max-len
   const filteredCryptos = cryptos && cryptos.filter((crypto) => crypto.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (

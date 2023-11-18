@@ -1,8 +1,8 @@
 .home-div {
-  background-image: url('../public/download (3).jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  background-color: #3939d1;
+  background-repeat: repeat;
+  background-size: contain;
+  height: max-content;
 }
 
 .cards-list {
@@ -10,7 +10,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
-  gap: 10px;
 }
 
 .itemsActions {
@@ -35,25 +34,33 @@
 .details-nav {
   height: 2em;
   width: 2em;
+  color: #3939d1;
+}
+
+.loading-text {
+  color: #fff;
 }
 
 .header-card {
   display: inline-flex;
   flex-direction: row;
   align-content: center;
-  align-items: center;
-  width: -webkit-fill-available;
+  gap: 10px;
+  align-items: start;
+  width: fit-content;
+}
+
+.card-title {
+  width: 70px;
 }
 
 .div-cardImg {
-  width: 70px;
+  width: fit-content;
+  margin: 10px;
   height: 70px;
   overflow: hidden;
   border-radius: 50%;
-  margin-right: 294px;
   border: 1px solid;
-  margin-left: 9px;
-  margin-bottom: 25px;
 }
 
 .cardBody {
@@ -108,20 +115,27 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-between;
+  gap: 49px;
 }
 
 .nav-items {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  background-color: black;
+  justify-content: flex-start;
+  background-color: #3939d1;
   color: #fff;
   padding: 5px;
   font-size: 23px;
   font-family: cursive;
 }
 
+.status-screen {
+  margin: 10px;
+    background-color: blue;
+    padding: 12px;
+    border-style: inset;
+    border-radius: 26px;
+}
 /* Media query for mobile devices */
 @media screen and (max-width: 375px) {
   .search-bar {

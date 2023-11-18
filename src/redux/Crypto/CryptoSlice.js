@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
   data: [],
-  details: [],
   status: 'idle',
   error: null,
 };
@@ -11,24 +9,32 @@ const initialState = {
 export const fetchCrypto = createAsyncThunk(
   'crypto/fetchCrypto',
   async (searchQuery = '') => {
-    const response = await axios.get(`https://api.coinranking.com/v2/coins?search=${searchQuery}`);
-    return response.data;
-  },
-);
+    try {
+      const url = `https://api.coinranking.com/v2/coins?search=${searchQuery}`;
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-export const fetchDetails = createAsyncThunk(
-  'crypto/fetchDetails',
-  async (id) => {
-    const response = await axios.get(`https://api.coinranking.com/v2/coins/${id}`);
-    console.log(response);
-    return response.data;
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(`Failed to fetch crypto data: ${error.message}`);
+    }
   },
 );
 
 const cryptoSlice = createSlice({
   name: 'crypto',
   initialState,
-  reducers: {},
+  reducers: {
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCrypto.pending, (state) => {
@@ -41,19 +47,9 @@ const cryptoSlice = createSlice({
       .addCase(fetchCrypto.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
-      })
-      .addCase(fetchDetails.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchDetails.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.details = action.payload.data; // Assuming the details are under the 'coin' property
-      })
-      .addCase(fetchDetails.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
       });
   },
 });
 
+export const { setNameReducer } = cryptoSlice.actions;
 export default cryptoSlice.reducer;
