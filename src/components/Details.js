@@ -45,40 +45,30 @@ const Details = () => {
             </div>
           </div>
           <div className="divider-header">
-            <h2>
+            <h3>
               Crypto Details for:
               {' '}
               {name}
-            </h2>
+            </h3>
           </div>
           <ul className="details-list">
-            <li className="details-item">
-              <strong>Name:</strong>
-              {' '}
-              {cryptoDetails.name}
-            </li>
-            <li className="details-item">
-              <strong>Symbol:</strong>
-              {' '}
-              {cryptoDetails.symbol}
-            </li>
-            <li className="details-item">
-              <strong>24h Volume:</strong>
-              {' '}
-              {cryptoDetails['24hVolume']}
-            </li>
-            <li className="details-item">
-              <strong>BTC Price:</strong>
-              {' '}
-              {cryptoDetails.btcPrice}
-            </li>
-            <li className="details-item">
-              <strong>Change:</strong>
-              {' '}
-              {cryptoDetails.change}
-            </li>
+            {Object.entries(cryptoDetails).map(([key, value], index) => (
+              <li
+                key={key}
+                className="details-item"
+                style={{
+                  backgroundColor: index % 2 === 0 ? '3939d1' : '#4d4dff',
+                }}
+              >
+                <strong>
+                  {key}
+                  :
+                </strong>
+                {' '}
+                {value}
+              </li>
+            ))}
           </ul>
-
         </>
       )}
     </div>

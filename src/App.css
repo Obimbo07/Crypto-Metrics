@@ -32,9 +32,9 @@
 }
 
 .details-nav {
-  height: 2em;
+  height: 1em;
   width: 2em;
-  color: #3939d1;
+  color: #fff;
 }
 
 .loading-text {
@@ -55,18 +55,12 @@
 }
 
 .div-cardImg {
-  width: fit-content;
-  margin: 10px;
-  height: 70px;
   overflow: hidden;
-  border-radius: 50%;
-  border: 1px solid;
 }
 
 .cardBody {
-  border: 1px solid;
   width: fit-content;
-  padding: 10px;
+  padding: 8px;
 }
 
 .Logo-cont {
@@ -115,7 +109,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  gap: 49px;
 }
 
 .nav-items {
@@ -136,13 +129,12 @@
   border-radius: 26px;
 }
 
-/* Media query for mobile devices */
 @media screen and (max-width: 375px) {
   .search-bar {
-    height: 10vh; /* Adjust height to fit content */
+    height: 10vh;
   }
 
   .search-input {
-    width: 100%; /* Full width for mobile */
+    width: 100%;
   }
 }

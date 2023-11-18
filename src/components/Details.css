@@ -1,25 +1,21 @@
 .details-container {
-  margin: 20px;
-  padding: 10px;
-  border-radius: 10px;
   background-color: #3939d1;
 }
 
 .details-header {
   display: flex;
   padding: 10px;
-  justify-content: space-evenly;
-  gap: 70px;
+  justify-content: center;
   background-color: #3939d1;
 }
 
 .img-cont {
-  width: 20%;
+  width: 10%;
   height: auto;
 }
 
 .logo-img {
-  width: 120px;
+  width: 100px;
 }
 
 .header-inner {
@@ -40,12 +36,19 @@
 
 .details-list {
   display: flex;
+  flex-direction: column;
   list-style: none;
   color: #fff;
-  width: 100%;
+  padding: 1px;
 }
 
 .details-item {
   border: 1px solid;
   padding: 20px;
+}
+
+@media screen and (max-width: 375px) {
+  .logo-img {
+    width: 70px;
+  }
 }

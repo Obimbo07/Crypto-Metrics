@@ -29,22 +29,17 @@ const Home = () => {
       </div>
       <div className="card-section">
         {filteredCryptos && filteredCryptos.length > 0 ? (
-          filteredCryptos.map((crypto) => (
-            <div style={{ width: 'fit-content' }} key={crypto.id}>
+          filteredCryptos.map((crypto, index) => (
+            <div style={{ width: '50%' }} key={crypto.id}>
               <Card
                 className="p-2"
                 style={{
-                  backgroundColor: 'rgb(52, 58, 64)',
+                  backgroundColor: index % 2 === 0 ? '#3939d1' : '#4d4dff',
                   color: 'white',
-                  margin: '10px',
-                  padding: '40px',
-                  borderStyle: 'groove',
-                  borderRadius: '56px',
-                  borderColor: '#3939d1',
-                  width: '200px',
+                  padding: '7px',
+                  height: '96%',
                 }}
               >
-
                 <Card.Header className="header-card">
                   <Card.Title className="card-title">{crypto.name}</Card.Title>
                   <div className="div-cardImg">
@@ -52,25 +47,25 @@ const Home = () => {
                       variant="top"
                       src={crypto.iconUrl}
                       alt="Coin Icon"
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      style={{ width: '70%', height: '70%', objectFit: 'contain' }}
                     />
                   </div>
                   <Link to={`/details/${crypto.name}`}>
                     <FaArrowCircleRight className="details-nav" />
                   </Link>
                 </Card.Header>
-                <Card.Body class="cardBody">
-                  <Card.Subtitle className="mb-2 p-2 text-muted">
+                <Card.Body className="cardBody">
+                  <Card.Subtitle className=" text-muted">
                     Market Cap:
                     {' '}
                     {crypto.marketCap}
                   </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 p-2 text-muted">
+                  <Card.Subtitle className=" text-muted">
                     Price:
                     {' '}
                     {crypto.price}
                   </Card.Subtitle>
-                  <Card.Subtitle className="mb-2 p-2 text-muted">
+                  <Card.Subtitle className=" text-muted">
                     Change:
                     {' '}
                     {crypto.listedAt}
