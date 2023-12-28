@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Home component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="home-div"
+  >
+    <div
+      class="search-bar"
+    >
+      <input
+        class="search-input"
+        placeholder="Search by name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="status-nav"
+    >
+      <div
+        class="nav-items"
+      >
+        <span
+          class="Page-title"
+        >
+          Status by Crypto
+        </span>
+      </div>
+    </div>
+    <div
+      class="card-section"
+    >
+      <div
+        class="loading-text"
+      >
+        Loading Data Please Wait...
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
