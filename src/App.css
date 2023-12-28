@@ -1,39 +1,140 @@
-.App {
-  text-align: center;
+.home-div {
+  background-color: #3939d1;
+  background-repeat: repeat;
+  background-size: contain;
+  height: max-content;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cards-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.itemsActions {
+  display: flex;
+  gap: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.links {
+  padding: 8px;
+  color: rgb(212, 209, 209);
+  cursor: pointer;
+}
+
+.itm-act {
+  align-items: flex-end;
+  padding: 5px;
+  height: 3vh;
+  width: auto;
+  color: #fff;
+}
+
+.details-nav {
+  height: 1em;
+  width: 2em;
+  color: #fff;
+}
+
+.loading-text {
+  color: #fff;
+}
+
+.header-card {
+  display: inline-flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 10px;
+  align-items: start;
+  width: fit-content;
+}
+
+.card-title {
+  width: 70px;
+}
+
+.div-cardImg {
+  overflow: hidden;
+}
+
+.cardBody {
+  width: fit-content;
+  padding: 8px;
+}
+
+.Logo-cont {
+  color: #fff;
+}
+
+.search-bar {
+  position: relative;
+  background-image: url('../public/images.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  background-position-x: left;
+  width: 100%;
+  height: 23vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.search-input {
+  background-color: #3939d1;
+  border: 9px;
+  padding: 8px;
+  border-radius: 3px;
+  color: #ffff;
+  width: 200px; /* Adjust width for mobile layout */
+  margin-bottom: 10px; /* Add margin for spacing */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-section {
+  width: 100%;
+  height: 7vh;
+  background-color: #3939d1;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  gap: 0;
+  justify-content: space-between;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #3939d1;
+  color: #fff;
+  padding: 5px;
+  font-size: 23px;
+}
+
+.status-screen {
+  margin: 10px;
+  background-color: blue;
+  padding: 12px;
+  border-style: inset;
+  border-radius: 26px;
+}
+
+@media screen and (max-width: 375px) {
+  .search-bar {
+    height: 10vh;
   }
 
-  to {
-    transform: rotate(360deg);
+  .search-input {
+    width: 100%;
   }
 }
